@@ -1,0 +1,11 @@
+Signal, Sub System, Function, Sender, Receiver
+signal3,subsystem2.yaml,function1,ECU2,ECU5
+signal2,subsystem1.yaml,function1,ECU1,ECU2
+signal2,subsystem2.yaml,function1,ECU1,ECU2
+signal1,subsystem1.yaml,function1,ECU1,ECU2|ECU3
+signal1,subsystem2.yaml,function1,ECU1,ECU2
+signal7,subsystem2.yaml,function2,EC11,
+signal5,subsystem1.yaml,function2,EC11,
+signal4,subsystem1.yaml,function1,ECU11,ECU300
+signal4,subsystem1.yaml,function2,ECU11,ECU1|ECU300
+signal4,subsystem2.yaml,function2,ECU11,ECU200|ECU300

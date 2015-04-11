@@ -6,7 +6,7 @@ signal1:
       - ECU3
       sender:
       - ECU1
-  subsystem2:
+  subsystem2.yaml:
     function1:
       receiver:
       - ECU2
@@ -19,14 +19,14 @@ signal2:
       - ECU2
       sender:
       - ECU1
-  subsystem2:
+  subsystem2.yaml:
     function1:
       receiver:
       - ECU2
       sender:
       - ECU1
 signal3:
-  subsystem2:
+  subsystem2.yaml:
     function1:
       receiver:
       - ECU5
@@ -45,7 +45,7 @@ signal4:
       - ECU300
       sender:
       - ECU11
-  subsystem2:
+  subsystem2.yaml:
     function2:
       receiver:
       - ECU200
@@ -59,7 +59,7 @@ signal5:
       sender:
       - EC11
 signal7:
-  subsystem2:
+  subsystem2.yaml:
     function2:
       receiver: []
       sender:
