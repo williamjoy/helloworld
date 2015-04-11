@@ -1,0 +1,7 @@
+Signal, Sender, Receiver
+signal3,ECU2,ECU5
+signal2,ECU1,ECU2
+signal1,ECU1,ECU3|ECU2
+signal7,EC11,
+signal5,EC11,
+signal4,ECU11,ECU1|ECU300|ECU200
