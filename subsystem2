@@ -1,3 +1,4 @@
+---
 subsystem2:
    signal1: [ ECU1 , ECU2 ]
    signal2: [ ECU1 , ECU2 ]
