@@ -2,8 +2,8 @@
 function1:
      signal1: [ ECU1 , ECU2, ECU3 ]
      signal2: [ ECU1 , ECU2 ]
-     #signal3: [ ECU2 , ECU5 ]
-     signal4: [ ECU11,  ECU300]
+     signal3: [ ECU2 , ECU5 ]
+     signal4: [ ECU12,  ECU300]
 function2:
      signal4: [ ECU11,  ECU1, ECU300]
      signal5: [ EC11 ]
