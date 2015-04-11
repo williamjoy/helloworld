@@ -5,12 +5,28 @@ signal1:
     - ECU3
     sender:
     - ECU1
+  subsystem2:
+    receiver:
+    - ECU2
+    sender:
+    - ECU1
 signal2:
   function1:
     receiver:
     - ECU2
     sender:
     - ECU1
+  subsystem2:
+    receiver:
+    - ECU2
+    sender:
+    - ECU1
+signal3:
+  subsystem2:
+    receiver:
+    - ECU5
+    sender:
+    - ECU2
 signal4:
   function1:
     receiver:
@@ -23,8 +39,19 @@ signal4:
     - ECU300
     sender:
     - ECU11
+  subsystem2:
+    receiver:
+    - ECU200
+    - ECU300
+    sender:
+    - ECU11
 signal5:
   function2:
+    receiver: []
+    sender:
+    - EC11
+signal7:
+  subsystem2:
     receiver: []
     sender:
     - EC11
