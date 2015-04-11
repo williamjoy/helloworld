@@ -5,9 +5,3 @@ subsystem1:
    signal3: [ ECU2 , ECU5 ]
    signal4: [ ECU11, ECU100, ECU200, ECU300]
    signal5: [ EC11 ]
-subsystem2:
-   signal1: [ ECU1 , ECU2 ]
-   signal2: [ ECU1 , ECU2 ]
-   signal3: [ ECU2 , ECU5 ]
-   signal4: [ ECU11, ECU200, ECU300]
-   signal7: [ EC11 ]
