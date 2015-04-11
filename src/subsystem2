@@ -1,7 +1,8 @@
 ---
-subsystem2:
+function1:
    signal1: [ ECU1 , ECU2 ]
    signal2: [ ECU1 , ECU2 ]
    signal3: [ ECU2 , ECU5 ]
+function2:
    signal4: [ ECU11, ECU200, ECU300]
    signal7: [ EC11 ]
