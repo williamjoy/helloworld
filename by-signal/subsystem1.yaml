@@ -1,0 +1,41 @@
+signal1:
+  function1:
+    receiver:
+    - ECU2
+    - ECU3
+    sender:
+    - ECU1
+signal2:
+  function1:
+    receiver:
+    - ECU2
+    sender:
+    - ECU1
+signal3:
+  function1:
+    receiver:
+    - ECU5
+    sender:
+    - ECU2
+  function2:
+    receiver:
+    - ECU5
+    sender:
+    - ECU2
+signal4:
+  function1:
+    receiver:
+    - ECU300
+    sender:
+    - ECU11
+  function2:
+    receiver:
+    - ECU1
+    - ECU300
+    sender:
+    - ECU11
+signal5:
+  function2:
+    receiver: []
+    sender:
+    - EC11
