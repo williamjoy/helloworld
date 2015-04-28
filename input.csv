@@ -1,3 +1,3 @@
 Short Name, Long Name, Subscriber,                 Feature02:EBD, Feature05:ABS, Feature06:TCS, Feature07:SCS  
 AcceActPos, Accelerator Actual  Position, SCS, T,                  T,             T,            T
-AcceActPos, Accelerator Actual  Position, SCS, T,                  T,             T,            T
+AcceActPosV, Accelerator Actual  Position Validity, SCS, T,                  T,             T,            T
