@@ -19,10 +19,10 @@ for subsystem in os.listdir(input_dir):
         for i in range(len(reader.fieldnames)):
             log_md.write("--- |")
         for row in reader:
-            log_md.write("\n| ")
+            log_md.write("\n|")
             for i in range(len(reader.fieldnames)):
-                log_md.write(row[reader.fieldnames[i]])
-                log_md.write(" | ")
+                log_md.write(row[reader.fieldnames[i]].replace('|','\\|'))
+                log_md.write(" |")
             signal_long_name = row['Long Name']
             parsed_data.setdefault(signal_long_name, {})
             parsed_data[signal_long_name].setdefault(subsystem, {})
@@ -31,4 +31,4 @@ for subsystem in os.listdir(input_dir):
             parsed_data[signal_long_name][subsystem]['Subscriber'] += row['Subscriber'].split('|')
             parsed_data[signal_long_name][subsystem]['Subscriber'] = list(set(parsed_data[signal_long_name][subsystem]['Subscriber']))
 print '========================='
-log_md.write('\n\nGenerated Data\n==========================\n\n```{}```'.format( yaml.dump(parsed_data,default_flow_style=False)))
+log_md.write('\n\nGenerated Data\n==========================\n\n```yaml\n{}```'.format( yaml.dump(parsed_data,default_flow_style=False)))
