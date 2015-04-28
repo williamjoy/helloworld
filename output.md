@@ -10,7 +10,7 @@ project-ip360.csv
 Generated Data
 ==========================
 
-```
+```yaml
 Accelerator Actual  Position:
   project-ip360:
     Short Name: AcceActPos
