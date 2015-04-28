@@ -1,6 +1,0 @@
-ECU -> ECU, ECU1, ECU2, ECU3, ECU.., ECU100,
-ECU1, , , , signal3 ,,
-ECU2, , , , , ,
-ECU3, , ,signal3 , , ,
-ECU.., , , , , ,
-ECU100, , , , ,signal4 ,
