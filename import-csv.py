@@ -30,5 +30,6 @@ for subsystem in os.listdir(input_dir):
             parsed_data[signal_long_name][subsystem]['Short Name'] = row['Short Name']
             parsed_data[signal_long_name][subsystem]['Subscriber'] += row['Subscriber'].split('|')
             parsed_data[signal_long_name][subsystem]['Subscriber'] = list(set(parsed_data[signal_long_name][subsystem]['Subscriber']))
+    log_md.write("\n\n")
 print '========================='
-log_md.write('\n\nGenerated Data\n==========================\n\n```yaml\n{}```'.format( yaml.dump(parsed_data,default_flow_style=False)))
+log_md.write('\nGenerated Data\n==========================\n\n```yaml\n{}```'.format( yaml.dump(parsed_data,default_flow_style=False)))
