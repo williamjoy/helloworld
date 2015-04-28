@@ -5,12 +5,13 @@ project-ip360.csv
 | AcceActPos | Accelerator Actual  Position | SCS | T | T | T | T | 
 | AcceActPosV | Accelerator Actual  Position Validity | SCS | T | T | T | T | 
 | AutocTrCmdGear | Automatic Transimission Commanded Gear | ECM | T | T | T |  | 
-| BrkPdlPos | Brake Pedal Position | GW|ECM |  |  |  | T | 
+| BrkPdlPos | Brake Pedal Position | GW\|ECM |  |  |  | T | 
 
 Generated Data
 ==========================
 
-```Accelerator Actual  Position:
+```
+Accelerator Actual  Position:
   project-ip360:
     Short Name: AcceActPos
     Subscriber:
