@@ -1,6 +1,6 @@
-Short Name, Long Name, Subscriber,                 Feature02:EBD, Feature05:ABS, Feature06:TCS, Feature07:SCS  
-AcceActPos,  Accelerator Actual  Position, WIKI,         T,                  T,             T,            T
-AcceActPosV, Accelerator Actual  Position Validity, BBC, T,                  T,             T,            T
-AutocTrCmdGear, Automatic Transimission Commanded Gear, ECM,T,               T,             T,
+Short Name, Long Name, Publisher, Subscriber,                 Feature02:EBD, Feature05:ABS, Feature06:TCS, Feature07:SCS  
+AcceActPos,  Accelerator Actual  Position, ECM, WIKI,         T,                  T,             T,            T
+AcceActPosV, Accelerator Actual  Position Validity, ECM, BBC, T,                  T,             T,            T
+AutocTrCmdGear, Automatic Transimission Commanded Gear,GEAR, ECM,T,               T,             T,
 
-BBB, Brake Bread Beer, TOP|ECM,                  ,                  ,              ,            T
+BBB, Brake Bread Beer,BRKR, TOP|ECM,                  ,                  ,              ,            T

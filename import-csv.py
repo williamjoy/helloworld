@@ -3,7 +3,8 @@ import csv
 import os
 import yaml
 
-parsed_data = {}
+parsed_data_by_sender = {}
+parsed_data_by_subscriber = {}
 input_dir = './input'
 log_md=open("output.md", 'wb')
 
@@ -24,12 +25,14 @@ for subsystem in os.listdir(input_dir):
                 log_md.write(row[reader.fieldnames[i]].replace('|','\\|'))
                 log_md.write(" |")
             signal_long_name = row['Long Name']
-            parsed_data.setdefault(signal_long_name, {})
-            parsed_data[signal_long_name].setdefault(subsystem, {})
-            parsed_data[signal_long_name][subsystem].setdefault('Subscriber', [])
-            parsed_data[signal_long_name][subsystem]['Short Name'] = row['Short Name']
-            parsed_data[signal_long_name][subsystem]['Subscriber'] += row['Subscriber'].split('|')
-            parsed_data[signal_long_name][subsystem]['Subscriber'] = list(set(parsed_data[signal_long_name][subsystem]['Subscriber']))
+            parsed_data_by_sender.setdefault(signal_long_name, {})
+            parsed_data_by_sender[signal_long_name].setdefault(subsystem, {})
+            parsed_data_by_sender[signal_long_name][subsystem].setdefault('Subscriber', [])
+            parsed_data_by_sender[signal_long_name][subsystem]['Short Name'] = row['Short Name']
+            parsed_data_by_sender[signal_long_name][subsystem]['Publisher'] = row['Publisher']
+            subscribers = row['Subscriber'].split('|')
+            parsed_data_by_sender[signal_long_name][subsystem]['Subscriber'] += subscribers
+            parsed_data_by_sender[signal_long_name][subsystem]['Subscriber'] = list(set(parsed_data_by_sender[signal_long_name][subsystem]['Subscriber']))
     log_md.write("\n\n")
 print '========================='
-log_md.write('\nGenerated Data\n==========================\n\n```yaml\n{}```'.format( yaml.dump(parsed_data,default_flow_style=False)))
+log_md.write('\nGenerated Data\n==========================\n\n```yaml\n{}```'.format( yaml.dump(parsed_data_by_sender,default_flow_style=False)))
