@@ -22,7 +22,7 @@ for subsystem in os.listdir(input_dir):
         for row in reader:
             log_md.write("\n|")
             for i in range(len(reader.fieldnames)):
-                log_md.write(row[reader.fieldnames[i]].replace('|','\\|'))
+                log_md.write('`{}`'.format(row[reader.fieldnames[i]].replace('|','\\|')))
                 log_md.write(" |")
             signal_long_name = row['Long Name']
             parsed_data_by_sender.setdefault(signal_long_name, {})
