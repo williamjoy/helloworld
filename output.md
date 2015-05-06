@@ -21,51 +21,73 @@ Generated Data
 ==========================
 
 ```yaml
-Accelerator Actual  Position:
-  subsystem-x-secret:
-    Publisher: ECM
-    Short Name: AcceActPos
-    Subscriber:
-    - SCS
-  subsystem-xxx-public:
-    Publisher: ECM
-    Short Name: AcceActPos
-    Subscriber:
-    - WIKI
-Accelerator Actual  Position Validity:
-  subsystem-x-secret:
-    Publisher: ECM
-    Short Name: AcceActPosV
-    Subscriber:
-    - SCS
-  subsystem-xxx-public:
-    Publisher: ECM
-    Short Name: AcceActPosV
-    Subscriber:
-    - BBC
-Automatic Transimission Commanded Gear:
-  subsystem-x-secret:
-    Publisher: GEAR
-    Short Name: AutocTrCmdGear
-    Subscriber:
-    - ECM
-  subsystem-xxx-public:
-    Publisher: GEAR
-    Short Name: AutocTrCmdGear
-    Subscriber:
-    - ECM
-Brake Bread Beer:
-  subsystem-xxx-public:
-    Publisher: BRKR
-    Short Name: BBB
-    Subscriber:
-    - TOP
-    - ECM
-Brake Pedal Position:
-  subsystem-x-secret:
-    Publisher: BRKR
-    Short Name: BrkPdlPos
-    Subscriber:
-    - GW
-    - ECM
+BBC:
+  Receiving:
+    Accelerator Actual  Position Validity:
+      subsystem-xxx-public:
+      - ECM
+BRKR:
+  Sending:
+    Brake Bread Beer:
+      subsystem-xxx-public:
+      - TOP
+      - ECM
+    Brake Pedal Position:
+      subsystem-x-secret:
+      - GW
+      - ECM
+ECM:
+  Receiving:
+    Automatic Transimission Commanded Gear:
+      subsystem-x-secret:
+      - GEAR
+      subsystem-xxx-public:
+      - GEAR
+    Brake Bread Beer:
+      subsystem-xxx-public:
+      - BRKR
+    Brake Pedal Position:
+      subsystem-x-secret:
+      - BRKR
+  Sending:
+    Accelerator Actual  Position:
+      subsystem-x-secret:
+      - SCS
+      subsystem-xxx-public:
+      - WIKI
+    Accelerator Actual  Position Validity:
+      subsystem-x-secret:
+      - SCS
+      subsystem-xxx-public:
+      - BBC
+GEAR:
+  Sending:
+    Automatic Transimission Commanded Gear:
+      subsystem-x-secret:
+      - ECM
+      subsystem-xxx-public:
+      - ECM
+GW:
+  Receiving:
+    Brake Pedal Position:
+      subsystem-x-secret:
+      - BRKR
+SCS:
+  Receiving:
+    Accelerator Actual  Position:
+      subsystem-x-secret:
+      - ECM
+    Accelerator Actual  Position Validity:
+      subsystem-x-secret:
+      - ECM
+TOP:
+  Receiving:
+    Brake Bread Beer:
+      subsystem-xxx-public:
+      - BRKR
+WIKI:
+  Receiving:
+    Accelerator Actual  Position:
+      subsystem-xxx-public:
+      - ECM
 ```
