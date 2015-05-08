@@ -4,7 +4,7 @@ import os
 import yaml
 
 from graphviz import Digraph
-import zlib
+import hashlib
 
 dot = Digraph('Signals',format='svg')
 dot.graph_attr['rankdir'] = 'LR'
@@ -17,15 +17,16 @@ by_ecu = {}
 input_dir = './input'
 log_md=open("output.md", 'wb')
 
-__SHORT_NAME__ = 'Short Name'
-__LONG_NAME__  = 'Long Name'
+__SHORT_NAME__ = 'Signal Name (Short Name)'
+__LONG_NAME__  = 'Signal Name (Long Name)'
 __SUBSCRIBER__ = 'Subscriber'
 __PUBLISHER__  = 'Publisher'
 __SENDING__    = 'Sending'
 __RECEIVERING__  = 'Receiving'
 
 def hash_color(data):
-    return '#' + hex(zlib.adler32(data) % 0xffffff)[2:]
+    color = hashlib.md5(data)
+    return '#' + hashlib.md5(data).hexdigest()[:5]
 
 all_ecus = set()
 

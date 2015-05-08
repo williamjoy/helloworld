@@ -1,0 +1,8 @@
+Signal Name (Long Name),Signal Name (Short Name),Publisher,Subscriber,(Feature01: Miscellaneous Information),(Feature02: Electronic Brake force Distribution),(Feature 05: Antilock Brake System),(Feature 06: Traction Control System),(Feature 07: Stability Control System),(Feature 11: Auto Vehicle Hold),(Feature 13: Adaptive Cruise Control Braking),(Feature 20: Brake Disk Cleaning),(Feature 30: Hill Hold Control)
+Accelerator Actual Position,AccelActuPos,ECM,SCS,,,,,,,,,
+Accelerator Actual Position Validity,AccelActuPosV,ECM,SCS,,,,,,,,,
+Accelerator Effective Position,AccelEfctvPos,ECM,SCS,,,,,,,,,
+Antilock Brake System Active,ABSA,SCS,SDM|TCCM|TCM,,,,,,,,,
+Antilock Brake System Active Indication On,ABSAIO,SCS,SDM|TCCM|TCM,,,,,,,,,
+Auto Hold Message,AutoHoldMsg,SCS,IPK,,,,,,,,,
+Auto Hold System Status,AutoHoldSysSts,SCS,IPK|ECM|TCM,,,,,,,,,
