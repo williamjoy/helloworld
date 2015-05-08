@@ -6,7 +6,7 @@ import yaml
 from graphviz import Digraph
 import zlib
 
-dot = Digraph(comment='ECU Signals')
+dot = Digraph(comment='ECU Signals',format='svg')
 
 by_signal = {}
 by_ecu = {}
@@ -87,3 +87,4 @@ log_md.write('{}```'.format( yaml.dump(by_ecu,default_flow_style=False)))
 log_md.write('\nGenerated Graphviz Source\n==========================\n\n```dot\n')
 log_md.write(dot.source)
 log_md.write('\n```')
+dot.render('graph.dot')
