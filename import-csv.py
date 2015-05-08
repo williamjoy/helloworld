@@ -10,6 +10,7 @@ dot = Digraph('Signals',format='svg')
 dot.graph_attr['rankdir'] = 'LR'
 dot.graph_attr['title'] = 'ECU Signals'
 dot.node_attr['shape'] = 'box'
+dot.node_attr['style'] = 'filled'
 
 by_signal = {}
 by_ecu = {}
@@ -54,7 +55,7 @@ for subsystem in os.listdir(input_dir):
             subscribers = row[__SUBSCRIBER__].split('|')
             if(publisher not in all_ecus):
                 all_ecus.add(publisher)
-                dot.node(publisher,publisher, style='filled', color=hash_color(publisher))
+                dot.node(publisher,publisher, color=hash_color(publisher))
 
 
             by_ecu.setdefault(publisher, {})
@@ -67,7 +68,7 @@ for subsystem in os.listdir(input_dir):
             for subscriber in subscribers:
                 if(subscriber not in all_ecus):
                     all_ecus.add(subscriber)
-                    dot.node(subscriber,subscriber, style='filled', color=hash_color(subscriber))
+                    dot.node(subscriber,subscriber, color=hash_color(subscriber))
                 dot.edge(publisher,subscriber,label="{}::{}".format(subsystem,signal_short_name), color=hash_color(signal_short_name))
                 by_ecu.setdefault(subscriber, {})
                 by_ecu[subscriber].setdefault(__RECEIVERING__, {})
