@@ -84,6 +84,6 @@ print '========================='
 log_md.write('\nGenerated Data\n==========================\n\n```yaml\n')
 log_md.write('{}```'.format( yaml.dump(by_ecu,default_flow_style=False)))
 
-log_md.write('\nGenerated Graphviz Source\n==========================\n\n```dot`\n')
+log_md.write('\nGenerated Graphviz Source\n==========================\n\n```dot\n')
 log_md.write(dot.source)
 log_md.write('\n```')

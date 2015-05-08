@@ -94,7 +94,7 @@ WIKI:
 Generated Graphviz Source
 ==========================
 
-```dot`
+```dot
 // ECU Signals
 digraph {
 	ECM [label=ECM color="#a500d7" style=filled]
