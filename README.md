@@ -3,7 +3,7 @@ Martrix of ECU Signals
 
 ![graphviz](https://williamjoy.github.io/signal-matrix/graph.dot.svg)
 
-[Demo](https://github.com/williamjoy/signal-matrix/blob/master/output.md)
+[Demo](https://github.com/williamjoy/signal-matrix/blob/gh-pages/output.md)
 
 Python Dependency
 ==========
