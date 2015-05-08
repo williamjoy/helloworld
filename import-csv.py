@@ -7,6 +7,7 @@ from graphviz import Digraph
 import zlib
 
 dot = Digraph(comment='ECU Signals',format='svg')
+dot.graph_attr['rankdir'] = 'LR'
 
 by_signal = {}
 by_ecu = {}
