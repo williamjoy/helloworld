@@ -1,6 +1,7 @@
 Martrix of ECU Signals
 ==========
 
+![graphviz](https://williamjoy.github.io/signal-matrix/graph.dot.svg)
 
 [Demo](https://github.com/williamjoy/signal-matrix/blob/master/output.md)
 
