@@ -175,3 +175,5 @@ digraph Signals {
 			BRKR -> ECM [label="x-secret::BrkPdlPos" color="#0dc3f"]
 }
 ```
+
+![graphviz](https://williamjoy.github.io/signal-matrix/graph.dot.svg)

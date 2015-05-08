@@ -91,5 +91,5 @@ log_md.write('{}```'.format( yaml.dump(by_ecu,default_flow_style=False)))
 
 log_md.write('\nGenerated Graphviz Source\n==========================\n\n```dot\n')
 log_md.write(dot.source)
-log_md.write('\n```')
+log_md.write('\n```\n\n![graphviz](https://williamjoy.github.io/signal-matrix/graph.dot.svg)')
 dot.render('graph.dot')

@@ -8,7 +8,7 @@ digraph Signals {
 			ECM -> SCS [label="auto-s60::AccelEfctvPos" color="#7291a"]
 		SDM [label=SDM color="#f7860"]
 			SCS -> SDM [label="auto-s60::ABSA" color="#1229f"]
-		TCCM [label=TCCM color="#902d6"]
+		TCCM [label=TCCM color="#202d6"]
 			SCS -> TCCM [label="auto-s60::ABSA" color="#1229f"]
 		TCM [label=TCM color="#a9254"]
 			SCS -> TCM [label="auto-s60::ABSA" color="#1229f"]

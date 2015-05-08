@@ -74,7 +74,7 @@
 </g>
 <!-- TCCM -->
 <g id="node4" class="node"><title>TCCM</title>
-<polygon fill="#902d06" stroke="#902d06" points="782,-246.328 726,-246.328 726,-210.328 782,-210.328 782,-246.328"/>
+<polygon fill="#202d06" stroke="#202d06" points="782,-246.328 726,-246.328 726,-210.328 782,-210.328 782,-246.328"/>
 <text text-anchor="middle" x="754" y="-224.628" font-family="Times,serif" font-size="14.00">TCCM</text>
 </g>
 <!-- SCS&#45;&gt;TCCM -->
