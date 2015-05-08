@@ -6,8 +6,9 @@ import yaml
 from graphviz import Digraph
 import zlib
 
-dot = Digraph(comment='ECU Signals',format='svg')
+dot = Digraph('Signals',format='svg')
 dot.graph_attr['rankdir'] = 'LR'
+dot.graph_attr['title'] = 'ECU Signals'
 
 by_signal = {}
 by_ecu = {}

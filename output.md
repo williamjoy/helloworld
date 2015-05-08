@@ -95,9 +95,8 @@ Generated Graphviz Source
 ==========================
 
 ```dot
-// ECU Signals
-digraph {
-	graph [rankdir=LR]
+digraph Signals {
+	graph [rankdir=LR title="ECU Signals"]
 		ECM [label=ECM color="#a500d7" style=filled]
 		SCS [label=SCS color="#d500eb" shape=box style=filled]
 			ECM -> SCS [label="subsystem-x-secret::AcceActPos" color="#7003ca"]
