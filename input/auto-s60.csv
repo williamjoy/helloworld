@@ -13,3 +13,4 @@ Automatic Transmission Gear Shift Direction Failure,AutocTrGearShftDircnF,TCU,SC
 Break Fluid Level Low,BrkFludLvlLow,SCS,IPK|Telematics|SDM,,,,T,T,T,,,
 Brake Fluid Level Low Validity,BrkFludLvlLowV,SCS,IPK|Telematics|SDM,T,,,,,,,,
 Brake Pedel Position,BrkPdlPos,GW,SCS,T,,,,,,,,
+Brake Pedel Position Validity,BrkPdlPosV,GW,SCS,T,,,,,,,,

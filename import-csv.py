@@ -11,6 +11,7 @@ dot.graph_attr['rankdir'] = 'LR'
 dot.graph_attr['title'] = 'ECU Signals'
 dot.node_attr['shape'] = 'box'
 dot.node_attr['style'] = 'filled'
+dot.edge_attr['fontsize'] = '10'
 
 by_signal = {}
 by_ecu = {}
@@ -70,7 +71,7 @@ for subsystem in os.listdir(input_dir):
                 if(subscriber not in all_ecus):
                     all_ecus.add(subscriber)
                     dot.node(subscriber,subscriber, color=hash_color(subscriber))
-                dot.edge(publisher,subscriber,label="{}::{}".format(subsystem,signal_short_name), color=hash_color(signal_short_name))
+                dot.edge(publisher,subscriber,label="{}::{}".format(subsystem,signal_short_name), tooltip=signal_long_name, color=hash_color(signal_long_name), fontcolor=hash_color(signal_long_name))
                 by_ecu.setdefault(subscriber, {})
                 by_ecu[subscriber].setdefault(__RECEIVERING__, {})
                 by_ecu[subscriber][__RECEIVERING__].setdefault(signal_long_name, {})
