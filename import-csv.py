@@ -33,12 +33,14 @@ all_ecus = set()
 
 for subsystem in os.listdir(input_dir):
     if(not subsystem.endswith('.csv')):
+        print 'Looks like not csv file: {}, ignore'.format(subsystem)
         continue
+    print 'Loading CSV file {}'.format(subsystem)
     log_md.write("{}\n==========================\n".format(subsystem))
     with open("{}/{}".format(input_dir,subsystem), 'rb') as csvfile:
         subsystem = subsystem[:-4]
         reader = csv.DictReader(csvfile,skipinitialspace=True)
-        print reader.fieldnames
+        #print reader.fieldnames
         log_md.write("|{}|\n| ".format("|".join(reader.fieldnames)))
         for i in range(len(reader.fieldnames)):
             log_md.write("--- |")
@@ -93,4 +95,12 @@ log_md.write('{}```'.format( yaml.dump(by_ecu,default_flow_style=False)))
 log_md.write('\nGenerated Graphviz Source\n==========================\n\n```dot\n')
 log_md.write(dot.source)
 log_md.write('\n```\n\n![graphviz](https://williamjoy.github.io/signal-matrix/graph.dot.svg)')
+print 'Writing graphviz file graph.dot'
 dot.render('graph.dot')
+print 'Writing svg file graph.dot.svg'
+
+with open('output/database.yaml', 'w') as output_file:
+    print 'Writing to output/database.yaml'
+    yaml.dump(by_ecu, output_file, default_flow_style=False)
+with open('output/by_signal.yaml', 'w') as output_file:
+    yaml.dump(by_signal, output_file, default_flow_style=False)
