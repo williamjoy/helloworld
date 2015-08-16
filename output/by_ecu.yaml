@@ -1,0 +1,101 @@
+ECU1:
+  Receiving:
+    H:
+    - ECU2
+    I:
+    - ECU2
+    J:
+    - ECU2
+    K:
+    - ECU2
+    U:
+    - ECU4
+    V:
+    - ECU4
+  Sending:
+    A:
+    - ECU4
+    - ECU2
+    B:
+    - ECU4
+    - ECU2
+    C:
+    - ECU2
+    D:
+    - ECU4
+    E:
+    - ECU4
+    - ECU2
+    F:
+    - ECU4
+ECU2:
+  Receiving:
+    A:
+    - ECU1
+    B:
+    - ECU1
+    C:
+    - ECU1
+    E:
+    - ECU1
+  Sending:
+    H:
+    - ECU1
+    I:
+    - ECU4
+    - ECU1
+    J:
+    - ECU4
+    - ECU1
+    K:
+    - ECU4
+    - ECU1
+ECU3:
+  Receiving:
+    V:
+    - ECU4
+    W:
+    - ECU4
+  Sending:
+    O:
+    - ECU4
+    P:
+    - ECU4
+    Q:
+    - ECU4
+    R:
+    - ECU4
+ECU4:
+  Receiving:
+    A:
+    - ECU1
+    B:
+    - ECU1
+    D:
+    - ECU1
+    E:
+    - ECU1
+    F:
+    - ECU1
+    I:
+    - ECU2
+    J:
+    - ECU2
+    K:
+    - ECU2
+    O:
+    - ECU3
+    P:
+    - ECU3
+    Q:
+    - ECU3
+    R:
+    - ECU3
+  Sending:
+    U:
+    - ECU1
+    V:
+    - ECU3
+    - ECU1
+    W:
+    - ECU3
