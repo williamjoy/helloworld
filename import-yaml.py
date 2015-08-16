@@ -17,12 +17,11 @@ dot.node_attr['style'] = 'filled'
 dot.edge_attr['fontsize'] = '10'
 
 by_signal = {}
-by_ecu = {}
+by_ecu_subsystem = {}
+by_ecu= {}
 input_dir = './input-yaml'
 log_md=open("output.md", 'wb')
 
-__SHORT_NAME__ = 'Signal Name (Short Name)'
-__LONG_NAME__  = 'Signal Name (Long Name)'
 __SUBSCRIBER__ = 'subscribers'
 __PUBLISHER__  = 'publisher'
 __SENDING__    = 'Sending'
@@ -54,23 +53,34 @@ for subsystem in os.listdir(input_dir):
                     all_ecus.add(publisher)
                     dot.node(publisher,publisher, color=hash_color(publisher))
 
+                by_ecu_subsystem.setdefault(publisher, {})
+                by_ecu_subsystem[publisher].setdefault(__SENDING__, {})
+                by_ecu_subsystem[publisher][__SENDING__].setdefault(signal_long_name, {})
+                by_ecu_subsystem[publisher][__SENDING__][signal_long_name].setdefault(subsystem, [])
+                by_ecu_subsystem[publisher][__SENDING__][signal_long_name][subsystem] += subscribers
+                by_ecu_subsystem[publisher][__SENDING__][signal_long_name][subsystem] = list(set(by_ecu_subsystem[publisher][__SENDING__][signal_long_name][subsystem]))
+
                 by_ecu.setdefault(publisher, {})
                 by_ecu[publisher].setdefault(__SENDING__, {})
-                by_ecu[publisher][__SENDING__].setdefault(signal_long_name, {})
-                by_ecu[publisher][__SENDING__][signal_long_name].setdefault(subsystem, [])
-                by_ecu[publisher][__SENDING__][signal_long_name][subsystem] += subscribers
-                by_ecu[publisher][__SENDING__][signal_long_name][subsystem] = list(set(by_ecu[publisher][__SENDING__][signal_long_name][subsystem]))
+                by_ecu[publisher][__SENDING__].setdefault(signal_long_name, [])
+                by_ecu[publisher][__SENDING__][signal_long_name] += subscribers
+                by_ecu[publisher][__SENDING__][signal_long_name] = list(set(by_ecu[publisher][__SENDING__][signal_long_name]))
 
                 for subscriber in subscribers:
                     if(subscriber not in all_ecus):
                         all_ecus.add(subscriber)
                         dot.node(subscriber,subscriber, color=hash_color(subscriber))
                     dot.edge(publisher,subscriber,label="{}::{}".format(subsystem,signal_long_name), tooltip=signal_long_name, color=hash_color(signal_long_name), fontcolor=hash_color(signal_long_name))
+                    by_ecu_subsystem.setdefault(subscriber, {})
+                    by_ecu_subsystem[subscriber].setdefault(__RECEIVERING__, {})
+                    by_ecu_subsystem[subscriber][__RECEIVERING__].setdefault(signal_long_name, {})
+                    by_ecu_subsystem[subscriber][__RECEIVERING__][signal_long_name].setdefault(subsystem,[])
+                    by_ecu_subsystem[subscriber][__RECEIVERING__][signal_long_name][subsystem].append(publisher) #no dedup here, expecting array length to be 1
+
                     by_ecu.setdefault(subscriber, {})
                     by_ecu[subscriber].setdefault(__RECEIVERING__, {})
-                    by_ecu[subscriber][__RECEIVERING__].setdefault(signal_long_name, {})
-                    by_ecu[subscriber][__RECEIVERING__][signal_long_name].setdefault(subsystem,[])
-                    by_ecu[subscriber][__RECEIVERING__][signal_long_name][subsystem].append(publisher) #no dedup here, expecting array length to be 1
+                    by_ecu[subscriber][__RECEIVERING__].setdefault(signal_long_name, [])
+                    by_ecu[subscriber][__RECEIVERING__][signal_long_name].append(publisher) #no dedup here, expecting array length to be 1
 
                 by_signal.setdefault(signal_long_name, {})
                 by_signal[signal_long_name].setdefault(subsystem, {})
@@ -80,7 +90,7 @@ for subsystem in os.listdir(input_dir):
                 by_signal[signal_long_name][subsystem][__SUBSCRIBER__] = list(set(by_signal[signal_long_name][subsystem][__SUBSCRIBER__]))
 print '========================='
 log_md.write('\nGenerated Data\n==========================\n\n```yaml\n')
-log_md.write('{}```'.format( yaml.dump(by_ecu,default_flow_style=False)))
+log_md.write('{}```'.format( yaml.dump(by_ecu_subsystem,default_flow_style=False)))
 
 log_md.write('\nGenerated Graphviz Source\n==========================\n\n```dot\n')
 log_md.write(dot.source)
@@ -91,6 +101,7 @@ print 'Writing svg file graph.dot.svg'
 
 with open('output/database.yaml', 'w') as output_file:
     print 'Writing to output/database.yaml'
-    yaml.dump(by_ecu, output_file, default_flow_style=False)
+    yaml.dump(by_ecu_subsystem, output_file, default_flow_style=False)
 with open('output/by_signal.yaml', 'w') as output_file:
     yaml.dump(by_signal, output_file, default_flow_style=False)
+print yaml.dump(by_ecu,default_flow_style=False)
