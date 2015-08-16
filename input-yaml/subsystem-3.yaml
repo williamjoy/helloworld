@@ -20,15 +20,15 @@ Q:
 V:
   function3:
       publisher:
-        ECU3
+        ECU4
       subscribers:
-      -  ECU4
+      -  ECU3
 W:
   function3:
       publisher:
-        ECU3
+        ECU4
       subscribers:
-      -  ECU4
+      -  ECU3
 R:
   function3:
       publisher:
