@@ -1,0 +1,48 @@
+---
+A:
+  function1: #function name
+      publisher:
+        ECU1
+      subscribers: #subscriber is an array
+      -  ECU4
+B:
+  function1:
+      publisher:
+        ECU1
+      subscribers:
+      -  ECU2
+      -  ECU4
+E:
+  function1:
+      publisher:
+        ECU1
+      subscribers:
+      -  ECU2
+      -  ECU4
+F:
+  function1:
+      publisher:
+        ECU1
+      subscribers:
+      -  ECU4
+I:
+  function1:
+      publisher:
+        ECU2
+      subscribers:
+      -  ECU1
+      -  ECU4
+J:
+  function1:
+      publisher:
+        ECU2
+      subscribers:
+      -  ECU1
+      -  ECU4
+K:
+  function1:
+      publisher:
+        ECU2
+      subscribers:
+      -  ECU1
+      -  ECU4

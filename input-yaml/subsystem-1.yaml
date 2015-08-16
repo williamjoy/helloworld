@@ -1,0 +1,54 @@
+---
+A:  #signal name
+  function1: #function name
+      publisher:
+        ECU1
+      subscribers: #subscriber is an array
+      -  ECU2
+  function2:
+      publisher:
+        ECU1
+      subscribers:
+      -  ECU4
+B:  #signal name
+  function1: #function name
+      publisher:
+        ECU1
+      subscribers: #subscriber is an array
+      -  ECU2
+C:  #signal name
+  function1:
+      publisher:
+        ECU1
+      subscribers:
+      -  ECU2
+D:
+  function2:
+      publisher:
+        ECU1
+      subscribers:
+      -  ECU4
+H:  #signal name
+  function1:
+      publisher:
+        ECU2
+      subscribers:
+      -  ECU1
+I:  #signal name
+  function1:
+      publisher:
+        ECU2
+      subscribers:
+      -  ECU1
+U:  #signal name
+  function2:
+      publisher:
+        ECU4
+      subscribers:
+      -  ECU1
+V:  #signal name
+  function2:
+      publisher:
+        ECU4
+      subscribers:
+      -  ECU1
